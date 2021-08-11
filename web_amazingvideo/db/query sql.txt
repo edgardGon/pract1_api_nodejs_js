@@ -1,0 +1,32 @@
+create database if not EXISTS amazingVideo;
+USE amazingVideo;
+
+create table genres(
+	idGenre int  AUTO_INCREMENT PRIMARY KEY,
+    gerne varchar(500),
+    status int
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+create table movies(
+	idMovie int AUTO_INCREMENT PRIMARY KEY,
+    title varchar(200),
+   	description varchar(2000),
+    director varchar(200),
+    writer varchar(200),
+    year int,
+    idGenre int,
+    image varchar(2000),
+   	iDrate int,
+    FOREIGN KEY id_genre(idGenre) REFERENCES genres(idGenre)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+select a.
+
+
+INSERT INTO `genres` (`idGenre`, `gerne`, `status`) VALUES (NULL, 'Comedia', '1'), (NULL, 'Drama', '1'), (NULL, 'Acción', '1'), (NULL, 'Animación', '1');
+
+INSERT INTO `movies` (`idMovie`, `title`, `description`, `director`, `writer`, `year`, `idGenre`, `image`, `iDrate`) VALUES (NULL, 'A Quiet Place', 'Sigue la historia de una familia que vive en una casa en el bosque cuidándose de no emitir ningún sonido. Si no te escuchan, no pueden cazarte...', 'Scott Beck', ' Bryan Woods', '2018', '2', 'https://pics.filmaffinity.com/a_quiet_place-854286921-mmed.jpg', '5');
+
+INSERT INTO `movies` (`idMovie`, `title`, `description`, `director`, `writer`, `year`, `idGenre`, `image`, `iDrate`) VALUES (NULL, 'Gran Torino', 'Walt Kowalski (Clint Eastwood), un veterano de la guerra de Corea (1950-1953), es un obrero jubilado del sector del automóvil que ha enviudado recientemente. Su máxima pasión es cuidar de su más preciado tesoro: un coche Gran Torino de 1972.', 'Clint Eastwood', 'Nick Schenk', '2008', '2', 'https://pics.filmaffinity.com/gran_torino-278262332-mmed.jpg', '4');
+
+INSERT INTO `movies` (`idMovie`, `title`, `description`, `director`, `writer`, `year`, `idGenre`, `image`, `iDrate`) VALUES (NULL, 'Me, Myself & Irene', 'harlie es un inocente y amable policía de Rhode Island que es todo un caballero, además de un abnegado padre soltero de tres hijos de color que su esposa tuvo tras una aventura. Pero un día Charlie, conocido por su buen carácter, no soporta más que le tomen por blando y sufre de repente un trastorno de personalidad.', 'Peter Farrelly', 'Bobby Farrelly', '2000', '1', 'https://pics.filmaffinity.com/me_myself_irene-800388853-mmed.jpg', '3.5'), (NULL, 'Hotaru no Haka', 'egunda Guerra Mundial (1939-1945). Seita y Setsuko son hijos de un oficial de la marina japonesa que viven en Kobe. Un día, durante un bombardeo, no consiguen llegar a tiempo al búnker donde su madre los espera', 'Isao Takahata', 'Akiyuki Nosaka', '1988', '4', 'https://pics.filmaffinity.com/hotaru_no_haka_aka_grave_of_the_fireflies_aka-128332096-mmed.jpg', '5');
